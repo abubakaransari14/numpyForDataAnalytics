@@ -94,3 +94,63 @@ import numpy as np
 equalSpace = np.linspace(0,1,10)
 print(f"Eqaul Space 0 to 1: \n{equalSpace}")
 
+"""**11.	Extract the first 3 rows of a 5×5 random matrix.**"""
+
+import numpy as np
+randArr = np.round(np.random.rand(5,5)*100)
+print(f"Random Array Of 5x5: \n{randArr}")
+print(f"First 3 Row: \n{randArr[:3]}")
+
+"""**12.	Replace all negative numbers in an array with zero.**"""
+
+import numpy as np
+listing = [1,2,4,5,6,78,-9,-3,34]
+npList = np.array(listing)
+print(f"Original Array: \n{npList}")
+npList[npList < 0] = 0
+print(f"After Mask: \n{npList}")
+
+"""**13.	Multiply two arrays element-wise.**"""
+
+import numpy as np
+listing1 = [1,2,4,45,26,78,9,34]
+listing2 = [1,2,4,63,18,19,113,3]
+npList1 = np.array(listing1)
+npList2 = np.array(listing2)
+print(f"Original List1: \n{npList1}")
+print(f"Original List2: \n{npList2}")
+
+print("x----------------------------------x")
+
+#Approach # 01 - With * sign
+multApproach1 = npList1 * npList2
+#Approach # 02 - With multiply funciton
+multApproach2 = np.multiply(npList1,npList2)
+
+print(f"Approach # 01: \n{multApproach1}")
+print(f"Approach # 02: \n{multApproach2}")
+
+"""**14.	Find the sum, mean, and standard deviation of a 1D array.**"""
+
+import numpy as np
+oneDimArray = [1,2,3,5,6,71,123,13,13,2,3,32,21,34]
+npOneDim = np.array(oneDimArray)
+print(f"Original Array:\n{npOneDim}")
+print(f"Sum: {np.sum(npOneDim)}")
+print(f"Mean: {np.mean(npOneDim)}")
+print(f"Median: {np.median(npOneDim)}")
+print(f"Min: {np.min(npOneDim)}")
+print(f"Max: {np.max(npOneDim)}")
+print(f"Standard Deviation: {np.std(npOneDim)}")
+
+"""**15.	Flatten a 2D array into a 1D array.**"""
+
+import numpy as np
+twoDim = [
+    [1,2,4,5,67,77,1],
+    [1,2,4,5,67,77,1],
+]
+npTwoDim = np.array(twoDim)
+print(f"Original Array:\n {npTwoDim}")
+print(f"Flatten Array:\n {npTwoDim.flatten()}")
+
