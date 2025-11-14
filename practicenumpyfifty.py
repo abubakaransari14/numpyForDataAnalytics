@@ -154,3 +154,169 @@ npTwoDim = np.array(twoDim)
 print(f"Original Array:\n {npTwoDim}")
 print(f"Flatten Array:\n {npTwoDim.flatten()}")
 
+"""# **MEDIUM (16–30) – Indexing, slicing, statistics, and operations**
+
+**16.	Create a 10×10 array and find the minimum and maximum values.**
+"""
+
+import numpy as np
+
+
+npArr = np.random.random((10,10))
+npArrMin = npArr.min()
+npArrMax = npArr.max()
+print(f"Random 10x10 array: \n{npArr}")
+print(f"Shape: {npArr.shape}")
+print(f"Min: {npArrMin}")
+print(f"Max: {npArrMax}")
+print(f"Flatten: {npArr.flatten()}")
+print(f"Index Of Max: {npArr.flatten().argmax()}")
+
+"""**17.	Select all odd numbers from a 1D array of 1–20.**"""
+
+import numpy as np
+import random
+num = np.random.randint(1, 20, size=20)  # 1 to 20
+odd = num[num%2 !=0]
+print(f"Original: {num}")
+print(f"Odd: {odd}")
+
+"""**18.	Reverse a 1D array.**"""
+
+import numpy as np
+import random
+oneDimNp= np.random.randint(1, 20, size=10)  # 1 to 10
+print(f"Original: {oneDimNp}")
+# Approach 1:
+reversed = np.flip(oneDimNp)
+print(f"Approach 1 - Reversed: {reversed}")
+# Approach 2:
+rev = oneDimNp[::-1]
+print(f"Approach 2 - Reversed: {rev}")
+
+"""**19.	Extract a submatrix (2×2) from a 4×4 matrix.**"""
+
+import numpy as np
+npOriginal = np.arange(16).reshape(4,4)
+print(f"Original: \n{npOriginal}")
+print(f"Original Matrix Shape: {npOriginal.shape}")
+subMatrix = npOriginal[0:2,0:2]
+print(f"SubMatrix: \n{subMatrix}")
+print(f"Sub Matrix Shape: {subMatrix.shape}")
+
+"""**20.	Stack two arrays vertically and horizontally.**"""
+
+import numpy as np
+numpyArr = np.arange(16).reshape(4,4)
+numpyArr2 = np.arange(16,32).reshape(4,4)
+print(f"Array1: \n{numpyArr}")
+print(f"Array2: \n{numpyArr2}")
+horizStack = np.hstack([numpyArr, numpyArr2])
+print(f"Horizontal Stack: \n{horizStack}")
+verStack = np.vstack([numpyArr, numpyArr2])
+print(f"Vertical Stack: \n{verStack}")
+
+"""**21.	Create a 1D array of 15 random integers from 0 to 100 and sort it.**"""
+
+import numpy as np
+rand = np.random.randint(0,100, size=15)
+print(f"Original: {rand}")
+print(f"Sorted: {np.sort(rand)}")
+
+"""**22.	Compute the dot product of two 2×2 matrices.**"""
+
+import numpy as np
+arr1 = np.arange(1,8,2).reshape(2,2)
+arr2 = np.arange(1,5).reshape(2,2)
+
+print(f"matrix 1: \n{arr1}")
+print(f"matrix 2: \n{arr2}")
+print(f"Dot Product: \n{np.dot(arr1,arr2)}")
+
+"""**23.	Find the unique elements and their counts in an array.**"""
+
+import numpy as np
+
+arr = np.array([[1, 2, 2],
+                [3, 5, 1],
+                [4, 2, 1]])
+# Get unique elements and their counts
+unique_vals, counts = np.unique(arr, return_counts=True)
+print(unique_vals)
+print(counts)
+
+"""**24.	Normalize a 1D array to have values between 0 and 1.**"""
+
+import numpy as np
+
+arr = np.array([100, 20, 30, 410, 501])
+
+# Min-max normalization
+normalized = (arr - arr.min()) / (arr.max() - arr.min())
+
+print("Original array:", arr)
+print("Normalized array:", normalized)
+
+# Z-score normalization
+mean = arr.mean()
+std = arr.std()
+
+standard_normalized = (arr - mean) / std
+
+print("Original array:", arr)
+print("Mean:", mean)
+print("Std Dev:", std)
+print("Z-score Normalized:", standard_normalized)
+
+"""***Extra: Normalization for 2D Array:***"""
+
+import numpy as np
+arr = np.array([
+    [10, 20, 30],
+    [5, 15, 40],
+    [25, 35, 45]
+])
+
+min = arr.min()
+max = arr.max()
+print(arr)
+print(f"Min: {min} & Max: {max}")
+
+nor = (arr-min) / (max-min)
+print(nor)
+
+rowMin = arr.min(axis=1, keepdims=True)
+rowMax = arr.max(axis=1, keepdims=True)
+
+print(f"Row Min: {rowMin} & Row Max: {rowMax}")
+
+rowNor = (arr-rowMin) / (rowMax-rowMin)
+print(f"Row Wise Normalization: {rowNor}")
+#same with col but axis = 0
+
+"""**25.	Compute the cumulative sum of a 1D array.**"""
+
+import numpy as np
+arr = np.random.randint(1,10, size=4)
+print(f"Original: {arr}")
+print(f"Comulative Sum: {np.cumsum(arr)}")
+
+"""***Extra: by manual python:***"""
+
+import random
+arr = [1,3,4,6,6,10,20,5,5,4,3,2,1]
+def myCumSum(yourArr):
+  arr = np.array(yourArr)
+  cumsum =  []
+  sum = 0
+  for i in range(len(arr)):
+    if i == 0:
+      sum = arr[i]
+      cumsum.append(arr[i])
+    else:
+      sum = sum + arr[i]
+      cumsum.append(sum)
+  return np.array(cumsum)
+
+myCumSum(arr)
+
