@@ -37,6 +37,7 @@ MEDIUM (16–30) – Indexing, slicing, statistics, and operations
 30.	Perform element-wise square and square-root operations on an array.
 ________________________________________
 HARD (31–42) – Linear algebra, broadcasting, and advanced operations
+
 31.	Compute the determinant of a 3×3 matrix.
 32.	Compute the inverse of a 3×3 matrix.
 33.	Solve a system of linear equations using NumPy.
@@ -51,6 +52,7 @@ HARD (31–42) – Linear algebra, broadcasting, and advanced operations
 42.	Use boolean indexing to filter out values between 10 and 20 from an array.
 ________________________________________
 HARDEST (43–50) – Real-world data manipulation, statistics, and interview-level problems
+
 43.	Given a dataset of temperatures (1D array), find the moving average with window size 3.
 44.	Generate a 100×100 array of random numbers and find the 90th percentile of each row.
 45.	Given a 2D array representing sales (rows=products, columns=months), find the product with the highest total sales.
