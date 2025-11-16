@@ -304,6 +304,7 @@ print(f"Comulative Sum: {np.cumsum(arr)}")
 """***Extra: by manual python:***"""
 
 import random
+import numpy as np
 arr = [1,3,4,6,6,10,20,5,5,4,3,2,1]
 def myCumSum(yourArr):
   arr = np.array(yourArr)
@@ -319,4 +320,88 @@ def myCumSum(yourArr):
   return np.array(cumsum)
 
 myCumSum(arr)
+
+"""**26.	Create a boolean mask to select elements greater than 5 from an array.**"""
+
+import numpy as np
+arr = np.random.randint(1,10, size=10)
+print(f"Original: {arr}")
+maskArr = arr>5
+filterArr = arr[maskArr]
+print(f"Boolen Mask Greater than 5: {maskArr}")
+print(f"Filtered: {filterArr}")
+
+"""***Extra: Boolean Masking of Rows and Columns***"""
+
+import numpy as np
+
+arr = np.random.randint(1, 7, size=(4, 4))
+print(f"Original: \n{arr}")
+maskRow = (arr>5).any(axis=1)
+
+print("x-----------------x")
+
+#for rows:
+print(f"Mask Row: {maskRow}")
+filterRow = arr[maskRow,:]
+print(f"Filter Row: \n{filterRow}")
+
+print("x-----------------x")
+
+#for columns:
+maskCol = (arr>5).any(axis=0)
+print(f"Mask Columns: {maskCol}")
+filterCol = arr[:,maskCol]
+print(f"Filter Columns: \n{filterCol}")
+
+"""**27.	Replace all odd numbers in an array with -1.**"""
+
+import numpy as np
+npArr = np.arange(1,11)
+print(f"Original: {npArr}")
+npArr[npArr%2==0] = -1
+print(f"Odd Replaced: {npArr}")
+
+"""**28.	Compute row-wise and column-wise sum of a 3×4 matrix.**"""
+
+import numpy as np
+npArr2 = np.random.randint(1,5, size=(3,4))
+print(f"Original: \n{npArr2}")
+
+print("x-------------x")
+
+rowSum = np.sum(npArr2,axis=1)
+print(f"Row Sum: {rowSum}")
+
+print("x-------------x")
+colSum = np.sum(npArr2,axis=0)
+print(f"Columns Sum: {colSum}")
+
+"""**29.	Create a 3×3 matrix and compute its transpose.**"""
+
+import numpy as np
+# print(np.zeros((3,3), dtype=np.int32))
+npArr3 = np.random.randint(1,19, size=(3,3))
+print(f"Original:\n{npArr3}")
+print("x--------------x")
+transpose = np.transpose(npArr3)
+print(f"Transpose: \n{transpose}")
+
+"""**30.	Perform element-wise square and square-root operations on an array.**"""
+
+import numpy as np
+npArr1D = np.arange(2,7)
+print(f"1D Array Original: {npArr1D}")
+sq1D = np.square(npArr1D)
+print(f"Square of 1D: {sq1D}")
+sqrt1D = np.sqrt(npArr1D)
+print(f"Square Root of 1D: \n{sqrt1D}")
+print("x---------------------x")
+
+npArr2D = np.random.randint(1,7, size=(2,2))
+print(f"2D Array Original: \n{npArr2D}")
+sq2D = np.square(npArr2D)
+print(f"Square of 2D: \n{sq2D}")
+sqrt2D = np.sqrt(npArr2D)
+print(f"Square Root of 2D: \n{sqrt2D}")
 
