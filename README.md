@@ -19,6 +19,7 @@ EASY (1–15) – Basics of NumPy
 15.	Flatten a 2D array into a 1D array.
 ________________________________________
 MEDIUM (16–30) – Indexing, slicing, statistics, and operations
+
 16.	Create a 10×10 array and find the minimum and maximum values.
 17.	Select all odd numbers from a 1D array of 1–20.
 18.	Reverse a 1D array.
