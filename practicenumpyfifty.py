@@ -405,3 +405,62 @@ print(f"Square of 2D: \n{sq2D}")
 sqrt2D = np.sqrt(npArr2D)
 print(f"Square Root of 2D: \n{sqrt2D}")
 
+"""**31.	Compute the determinant of a 3×3 matrix.**"""
+
+import numpy as np
+arr = np.random.randint(1,20, size=(3,3))
+print(f"Original Array: \n{arr}")
+print(f"Determinant:{np.round(np.linalg.det(arr))}")
+
+"""**32.	Compute the inverse of a 3×3 matrix.**"""
+
+import numpy as np
+arr = np.random.randint(1,20, size=(3,3))
+print(f"Original Array: \n{arr}")
+print(f"Inverse:{np.round(np.linalg.inv(arr))}")
+
+"""**33.	Solve a system of linear equations using NumPy**"""
+
+# 3x+2y=16
+# x−y=2
+import numpy as np
+A = np.array(
+              [[3,2],
+              [1,-1]]
+             )
+B = np.array([16,2])
+solution = np.linalg.solve(A,B)
+
+print("Solution [x, y]:", solution)
+
+# Verify
+check = np.dot(A, solution)  # Multiply A by solution
+print("Check Ax = B:", check)
+
+# Compare with original B
+print("Original B:", B)
+print("Is solution correct?", np.allclose(check, B))
+
+"""**34.	Multiply a 3×3 matrix with a 3×1 vector using broadcasting.**"""
+
+import numpy as np
+arr = np.random.randint(1,20, size=(3,3))
+arr2 = np.random.randint(1,10, size=(3,1))
+print(f"Original Array: \n{arr}")
+print(f"Original Array2: \n{arr2}")
+arr3 = np.dot(arr,arr2)
+arr4 = arr @ arr2
+print(f"Result: \n{arr3}")
+print(f"Result Approach 2: \n{arr4}")
+
+"""**35.	Compute eigenvalues and eigenvectors of a 2×2 matrix.**"""
+
+import numpy as np
+arr = np.random.randint(1,20, size=(2,2))
+print(f"Original Array: \n{arr}")
+
+eigvals, eigvecs = np.linalg.eig(A)
+
+print("Eigenvalues:", eigvals)
+print("Eigenvectors:\n", eigvecs)
+
